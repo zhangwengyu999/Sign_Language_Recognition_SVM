@@ -28,7 +28,7 @@ After capturing a image containing a hand gesture, then first step is to find wh
 
 ### ***Step2: Feature Extraction***
 **Fusion Feature**
-This feature is the **fusion** of **Pixel feature** and **Position Feature** of the hand, which takes the list of 21 coordinates of hand landmarks from MediaPipe Hands as input, then draw **white $(255,255,255)$ line segments** between landmarks with a **thickness of 60 pixels** on a **black background image $(0,0,0)$** with a same size as captured image as the black-white ***mask***. Then take the **bitwise AND** operation between the mask and the grey scale original captured image, which results in **pixels on hand only**. Finally, I take the AOI image and **resize** it to $28\times 28$ pixels, and make it divided by $255$ for **normalization**. Then I **flatten** it to a $1\times 784$ np array, saved as **Fusion Feature** (illustrated as non-black part in below).
+This feature is the **fusion** of **Pixel feature** and **Position Feature** of the hand, which takes the list of 21 coordinates of hand landmarks from MediaPipe Hands as input, then draw **white (255,255,255) line segments** between landmarks with a **thickness of 60 pixels** on a **black background image (0,0,0)** with a same size as captured image as the black-white ***mask***. Then take the **bitwise AND** operation between the mask and the grey scale original captured image, which results in **pixels on hand only**. Finally, I take the AOI image and **resize** it to 28X28 pixels, and make it divided by 255 for **normalization**. Then I **flatten** it to a 1X784 np array, saved as **Fusion Feature** (illustrated as non-black part in below).
 
 <img width = "60%" src="./img/33.png">
 
@@ -44,7 +44,7 @@ Label|1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 
 
 ### ***Step4: Dataset Splitting***
 
-After extracting **features** from the real-world hand gesture images, and artificially **labelling**, I get about $840$ **self-collected training feature-label data**. The feature-label data is split into **training set** and **testing set** with the ratio of $4:1$.
+After extracting **features** from the real-world hand gesture images, and artificially **labelling**, I get about 840 **self-collected training feature-label data**. The feature-label data is split into **training set** and **testing set** with the ratio of 4:1.
 
 ### ***Step5: Model Training***
 
@@ -58,7 +58,7 @@ I use the `metrics.accuracy_score` and `cross_val_score` from `sklearn` package 
 
 Finally, I put the trained model into real-world scenario to test its **robustness**. After capturing **real-world** (left) hand gesture images from camera, I use the same **feature extraction method** as mentioned in ***step 2*** to extract the features from the images, correspondingly to the **trained model**. Then let the model **predict** the label of the image.
 
-- After fitting the Fusion Feature dataset in the **SVM model**, I get the test **accuracy** of $0.99$ and the 5 **validation** scores of $[0.97,0.98,0.99,0.99,0.97]$. 
+- After fitting the Fusion Feature dataset in the **SVM model**, I get the test **accuracy** of 0.99 and the 5 **validation** scores of [0.97,0.98,0.99,0.99,0.97]. 
   - I could tell that the performance of the model ***inside self-collected dataset*** is **good** and **improved**.
 - Moreover, in the **real-world scenario**, the performance is still **good**.
   - I could tell that the model is **very robust** in the real-world scenario, and it is independent of the **almost any background**, as well as sensitive to the **similar hand gesture**.
