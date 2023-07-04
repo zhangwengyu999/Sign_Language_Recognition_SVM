@@ -1,7 +1,7 @@
 #############################################################################
 # Sign Language Recognition System (SLRS)                                   #
 #                                                                           #
-CAM_NO = 2 # Make sure your camera works properly;                          #
+CAM_NO = 2 # e.g. = 0 or 1 or 2. Make sure your camera works properly;      #
 #                                                                           #
 #   *********************************************************************   #
 #   ** Please carefully read README.md file first before running **   #
