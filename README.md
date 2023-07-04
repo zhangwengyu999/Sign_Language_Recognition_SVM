@@ -68,7 +68,7 @@ Finally, I put the trained model into real-world scenario to test its **robustne
 ## User Manual
 
 ## Preparation
-1. **Make sure your camera works properly (camera number can be set in line 11, if the programme goes wrong, please change the `CAM_NO` variable)**
+1. **Make sure your camera works properly (camera number can be set by `CAM_NO` variable at line 4 (in `trainTest.py` and `extractLabel.py` file), if the programme goes wrong, please change the value of `CAM_NO` variable)**
 2. Make sure following package are install (pip) for python3:
    1. `OpenCV`, `requests-toolbelt`, `numpy`, `pandas`, `sklearn`, `mediapipe`
    2. `gTTS`, `playsound`, `pyttsx3` (these 3 is for text to speech)
