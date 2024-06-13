@@ -5,7 +5,11 @@
 # Sign_Language_Recognition_SVM
 Sign Language Recognition System by Support Vector Machines (SVM)
 
-<img width = "70%" src="./img/0.png">
+
+
+https://github.com/zhangwengyu999/Sign_Language_Recognition_SVM/assets/68627255/f3b7b69a-94eb-437f-a65a-68cdce19968b
+
+
 
 ---
 
